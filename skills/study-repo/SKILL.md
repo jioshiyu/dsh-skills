@@ -57,3 +57,22 @@ description: >
 - 长源码先 `grep` 标号/中断调用看结构，再决定读哪段；
 - GBK/PDF 等要转码的源，先转存 `_scratch/`，不要反复读原目录；
 - 汇报用表格替段落：**体积看输入、账单看输出**（命中率 99%+ 时输出约占一半费用）。
+
+## 仓库族与模板（项目多了怎么连）
+
+- **每个仓库根放 `family.json`**：`name / kind / topic / runtime / items / ci / shared_reusable / skills / docs / status / homepage`；
+- `python wb.py family --ci` → 生成 `docs/family.md`：仓库表（含最近提交、Actions 结论）+ 可复用资产表 + 跨仓 Mermaid 图。
+  新项目一落盘就自动进表，**不需要记得去改某个文档**；
+- 新项目起手：`cp -r notebook-template my-xxx && rm -rf .git && git init`，
+  改 `family.json` 与 README 顶部，再 `python tools/scaffold.py problems/<分类>/<slug>`；
+- `wb.py family --check` 会列出"有 .git 但没写 family.json"的仓库——那就是即将变成孤岛的仓库。
+
+## 对拍不止 stdout（三种输出都要能比）
+
+| 类型 | ref.py 里提供 | 典型场景 |
+|---|---|---|
+| 文本 | `expected(inp)` | 绝大多数题 |
+| 屏幕 | `expected_screen(inp)` | TUI / 图形 / 寄存器面板（80x25） |
+| 文件 | `expected_disk(inp)` | 字典、日志、带持久化的程序（配内存虚拟盘） |
+
+> 屏幕/文件对拍能把"看得见但没法断言的输出"变成可回归的测试——这是本项目区别于普通作业仓库的关键。
