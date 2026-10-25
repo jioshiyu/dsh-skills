@@ -1,0 +1,21 @@
+{
+  "name": "dsh-skills",
+  "kind": "skills",
+  "topic": "技能库",
+  "stack": "Markdown（DSH 技能）",
+  "runtime": "DSH 技能目录（D:\\Projects\\.dsh\\skills）",
+  "items": "4 个技能",
+  "ci": "无",
+  "ci_status": "—",
+  "shared_reusable": [
+    "study-repo：把作业做成可对拍仓库",
+    "cost-discipline：成本记账与图片四规则",
+    "workbench-kb：知识库检索纪律",
+    "webtest：Web 自动化/测试大赛"
+  ],
+  "skills": ["workbench-kb", "study-repo"],
+  "docs": "workbench/docs/工具手册.md",
+  "status": "published",
+  "topics": ["dsh", "skills", "notebook-family"],
+  "homepage": "https://github.com/jioshiyu/dsh-skills"
+}
