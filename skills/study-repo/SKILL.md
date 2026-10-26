@@ -61,11 +61,11 @@ description: >
 ## 仓库族与模板（项目多了怎么连）
 
 - **每个仓库根放 `family.json`**：`name / kind / topic / runtime / items / ci / shared_reusable / skills / docs / status / homepage`；
-- `python wb.py family --ci` → 生成 `docs/family.md`：仓库表（含最近提交、Actions 结论）+ 可复用资产表 + 跨仓 Mermaid 图。
-  新项目一落盘就自动进表，**不需要记得去改某个文档**；
+- `python wb.py repo index --ci` → 生成 `docs/family.md`：仓库表（含最近提交、Actions 结论）+ 可复用资产表 + 跨仓 Mermaid 图。
+  新项目一落盘就自动进表，**不需要记得去改某个文档**（旧名 `family` 仍可用，会打 `W_DEPRECATED`）；
 - 新项目起手：`cp -r notebook-template my-xxx && rm -rf .git && git init`，
   改 `family.json` 与 README 顶部，再 `python tools/scaffold.py problems/<分类>/<slug>`；
-- `wb.py family --check` 会列出"有 .git 但没写 family.json"的仓库——那就是即将变成孤岛的仓库。
+- `wb.py repo index --check` 会列出"有 .git 但没写 family.json"的仓库——那就是即将变成孤岛的仓库。
 
 ## 对拍不止 stdout（三种输出都要能比）
 

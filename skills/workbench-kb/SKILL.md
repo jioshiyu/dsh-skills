@@ -35,7 +35,7 @@ python D:\Projects\workbench\scripts\wb.py search "关键词1 关键词2"
 - 优先用原生工具 `mcp__kb__kb_append(note)`：一句话写清「问题 + 解法」，默认进 `inbox.md` 的「待整理」；
 - 解决完非平凡问题（调试超过 10 分钟、踩坑、新配置）后，**主动**追加一条，不要等用户提醒；
 - 确认过的知识 → 写到对应专题文档（环境/工具/模型/项目），写完调 `mcp__kb__kb_reindex`；
-- 文档修改后运行 `python D:\Projects\workbench\scripts\wb.py collect` 刷新工作台数据。
+- 文档修改后运行 `python D:\Projects\workbench\scripts\wb.py session collect` 刷新工作台数据（旧名 `collect` 仍可用，会打 `W_DEPRECATED`）。
 
 ## 改完代码后的自检
 
