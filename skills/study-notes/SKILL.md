@@ -135,3 +135,9 @@ system-design-primer 的单主题单文件、keyvanakbary/learning-notes 的目�
 
 > 实测：第 9 章数据流那份 docx 末尾自述"部分内容由豆包工作 AI 生成"——这种必须在 `00-来源.md` 里写明，
 > 否则你会在考场上引用一个没人核过的定义。
+
+## 工具自身也会出错：写进报错手册
+
+跑复习包流水线时踩的坑（scaffold 抽不到标题、check 误报、related 撞名）
+一律写进 `workbench/docs/报错手册.md`，不要只在本轮对话里解决——
+下次换个科目重跑时，这些坑会再出现一次。
